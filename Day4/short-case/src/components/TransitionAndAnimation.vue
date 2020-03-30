@@ -6,7 +6,6 @@
         <transition name="fade">
             <div class="box" v-if="show">撩课学院</div>
         </transition>
-
     </div>
 </template>
 

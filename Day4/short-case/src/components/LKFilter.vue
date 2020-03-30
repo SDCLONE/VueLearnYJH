@@ -16,6 +16,7 @@
 </template>
 
 <script>
+    //首先安装moment  npm install moment --save
     import moment from 'moment';
     export default {
         name: "LKFilter",
