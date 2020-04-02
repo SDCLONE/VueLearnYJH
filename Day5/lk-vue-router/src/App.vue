@@ -2,8 +2,12 @@
   <div id="app">
 <!--    设置路由导航-->
     <div id="nav">
-      <router-link to="/home">首页</router-link>
-      <router-link to="/about">关于</router-link>
+        <router-link to="/home">首页</router-link>
+        <router-link to="/about">关于</router-link>
+<!--        带参数的路由-->
+        <router-link to="/mine/zhangsan/24">个人中心参数1</router-link>
+        <router-link to="/mine2?name=zhangsan&age=25">个人中心参数2</router-link>
+        <router-link to="/mine3/小撩/女?height=150">个人中心参数3</router-link>
     </div>
 <!--   设置路由出口-->
     <router-view></router-view>
