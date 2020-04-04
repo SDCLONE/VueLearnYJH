@@ -12,6 +12,15 @@
     <FormComponents/>
     <hr>
     <FormExample/>
+    <hr>
+    <FormExampleWithVerify/>
+    <hr>
+
+    <Table/>
+    <hr>
+    <TableCaseWithJavaServer/>
+    <hr>
+    <Tags/>
   </div>
 </template>
 
@@ -22,12 +31,17 @@ import Container from "./components/Container";
 import IconsAndLinks from "./components/IconsAndLinks";
 import FormComponents from "./components/FormComponents";
 import FormExample from "./components/FormExample";
+import FormExampleWithVerify from "./components/FormExampleWithVerify";
+import Table from "./components/Table";
+import TableCaseWithJavaServer from "./components/TableCaseWithJavaServer";
+import Tags from "./components/Tags";
 
 export default {
   name: 'app',
   components: {
     Buttons,Layout,Container,IconsAndLinks,
-    FormComponents,FormExample
+    FormComponents,FormExample,FormExampleWithVerify,
+    Table,TableCaseWithJavaServer, Tags
   }
 }
 </script>
