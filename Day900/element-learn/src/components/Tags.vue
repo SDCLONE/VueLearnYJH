@@ -18,6 +18,11 @@
             {{tag}}
         </el-tag>
 
+        <h4>不同尺寸的标签</h4>
+        <el-tag >默认标签</el-tag>
+        <el-tag size="medium">中等标签</el-tag>
+        <el-tag size="small">小型标签</el-tag>
+        <el-tag size="mini">超小标签</el-tag>
     </div>
 </template>
 

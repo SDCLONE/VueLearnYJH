@@ -21,6 +21,10 @@
     <TableCaseWithJavaServer/>
     <hr>
     <Tags/>
+    <hr>
+    <Pagination/>
+    <hr>
+    <PaginationCaseWithJavaServer/>
   </div>
 </template>
 
@@ -35,13 +39,15 @@ import FormExampleWithVerify from "./components/FormExampleWithVerify";
 import Table from "./components/Table";
 import TableCaseWithJavaServer from "./components/TableCaseWithJavaServer";
 import Tags from "./components/Tags";
+import Pagination from "./components/Pagination";
+import PaginationCaseWithJavaServer from "./components/PaginationCaseWithJavaServer";
 
 export default {
   name: 'app',
   components: {
     Buttons,Layout,Container,IconsAndLinks,
     FormComponents,FormExample,FormExampleWithVerify,
-    Table,TableCaseWithJavaServer, Tags
+    Table,TableCaseWithJavaServer, Tags,Pagination,PaginationCaseWithJavaServer
   }
 }
 </script>
