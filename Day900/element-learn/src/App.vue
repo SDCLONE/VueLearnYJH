@@ -25,6 +25,11 @@
     <Pagination/>
     <hr>
     <PaginationCaseWithJavaServer/>
+    <hr>
+
+    <NaviMenu/>
+    <hr>
+    <NaviMenuCaseWithVueRouter/>
   </div>
 </template>
 
@@ -41,13 +46,17 @@ import TableCaseWithJavaServer from "./components/TableCaseWithJavaServer";
 import Tags from "./components/Tags";
 import Pagination from "./components/Pagination";
 import PaginationCaseWithJavaServer from "./components/PaginationCaseWithJavaServer";
+import NaviMenu from "./components/NaviMenu";
+import NaviMenuCaseWithVueRouter from "./components/NaviMenuCaseWithVueRouter";
+
 
 export default {
   name: 'app',
   components: {
     Buttons,Layout,Container,IconsAndLinks,
     FormComponents,FormExample,FormExampleWithVerify,
-    Table,TableCaseWithJavaServer, Tags,Pagination,PaginationCaseWithJavaServer
+    Table,TableCaseWithJavaServer, Tags,Pagination,PaginationCaseWithJavaServer,
+    NaviMenu,NaviMenuCaseWithVueRouter
   }
 }
 </script>
