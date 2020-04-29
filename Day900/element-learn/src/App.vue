@@ -30,6 +30,9 @@
     <NaviMenu/>
     <hr>
     <NaviMenuCaseWithVueRouter/>
+    <hr>
+
+    <Dialog/>
   </div>
 </template>
 
@@ -48,7 +51,7 @@ import Pagination from "./components/Pagination";
 import PaginationCaseWithJavaServer from "./components/PaginationCaseWithJavaServer";
 import NaviMenu from "./components/NaviMenu";
 import NaviMenuCaseWithVueRouter from "./components/NaviMenuCaseWithVueRouter";
-
+import Dialog from "./components/Dialog";
 
 export default {
   name: 'app',
@@ -56,7 +59,8 @@ export default {
     Buttons,Layout,Container,IconsAndLinks,
     FormComponents,FormExample,FormExampleWithVerify,
     Table,TableCaseWithJavaServer, Tags,Pagination,PaginationCaseWithJavaServer,
-    NaviMenu,NaviMenuCaseWithVueRouter
+    NaviMenu,NaviMenuCaseWithVueRouter,
+    Dialog
   }
 }
 </script>

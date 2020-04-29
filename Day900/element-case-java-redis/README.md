@@ -1,4 +1,4 @@
-# element-learn
+# element-case-java-redis
 
 ## Project setup
 ```
@@ -11,7 +11,6 @@ npm run serve
 ```
 
 ### Compiles and minifies for production
-### 在打包之前创建 vue.config.js并声明静态资源目录为 ./  否组无法加载静态资源
 ```
 npm run build
 ```
