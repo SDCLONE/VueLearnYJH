@@ -2,7 +2,6 @@
   <div id="app">
     <LoginPage v-show="!getLoginStatus()"/>
     <ManagementPage v-show="getLoginStatus()"/>
-    <h1>hello</h1>
   </div>
 </template>
 
@@ -26,6 +25,11 @@ export default {
 </script>
 
 <style>
+  body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
 #app {
 
 }
