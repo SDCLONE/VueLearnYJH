@@ -1,19 +1,26 @@
 <template>
-    <div>
-        <h2>这个是管理界面</h2>
-        <p>真是有趣</p>
-        <button @click="handleLogout">退出登录</button>
+    <div id="app">
+
+        <el-row>
+            <NaviPart/>
+        </el-row>
+
     </div>
 </template>
 
 <script>
+    import NaviPart from "./NaviPart";
     export default {
         name: "ManagementPage",
-        methods:{
-            handleLogout(){
-                console.log("退出登录");
-                this.$store.commit('LOGOUT');
+        components: {NaviPart},
+        data(){
+            return{
+
             }
+        },
+        methods:{
+
+
         }
     }
 </script>

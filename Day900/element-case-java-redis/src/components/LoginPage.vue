@@ -2,15 +2,8 @@
 
 <template>
     <div id="app">
-        <el-row class="nav-part">
-            <el-col :span="10">
-                <i class="el-icon-platform-eleme"></i> Element
-            </el-col>
-            <el-col :span="11" :offset="1">
-                <el-link :underline="false">En</el-link>
-                <el-link :underline="false">关于我们</el-link>
-                <el-link :underline="false">首页</el-link>
-            </el-col>
+        <el-row>
+            <NaviPart/>
         </el-row>
         <el-row class="main-part">
             <el-col :span="14">
@@ -41,16 +34,27 @@
 
             </el-col>
         </el-row>
-        <footer>
-            This is footer
-        </footer>
+        <el-row class="footer">
+            <div class="help-links">
+                <el-link :underline="false">关于我们</el-link>
+                <el-link :underline="false">法律声明及隐私权政策</el-link>
+                <el-link :underline="false">举报投诉</el-link>
+                <el-link :underline="false">联系我们</el-link>
+            </div>
+            <div class="help-links">
+                © 2009-2019 Aliyun.com 版权所有 浙ICP备12022327号 增值电信业务经营许可证： 浙B2-20080101
+            </div>
+        </el-row>
 
     </div>
 </template>
 
 <script>
+    import NaviPart from "./NaviPart";
+
     export default {
         name: "LoginPage",
+        components: {NaviPart},
         data(){
             return{
                 loginForm:{
@@ -68,7 +72,6 @@
             }
         },
         methods:{
-
             submitLogin(formName){
                 //表单校验
                 this.$refs[formName].validate((valid)=>{
@@ -87,10 +90,6 @@
             doLoginHelp(){
                 //TODO 完成用户名密码找回逻辑
                 alert("用户名密码找回步骤")
-            },
-            handleSelect(key, keyPath) {
-                console.log(key, keyPath);
-                //key对应标签的index属性  keyPath对应上到下的index数组
             }
         }
     }
@@ -102,33 +101,10 @@
         height: 100%;
         position: absolute;
     }
-    .nav-part{
-        width: 100%;
-        height: 60px;
-        background-color: #252a2f;
-    }
-    .nav-part .el-col{
-        line-height: 60px;
-        text-align: center;
-        font-size: 30px;
-        color: #FFFFFF;
-    }
-    .nav-part .el-col:first-child{
-        font-size: 35px;
-        text-align: left;
-        padding-left: 30px;
-    }
-    .nav-part .el-link{
-        float: right;
-        margin-left: 20px;
-        margin-right: 20px;
-        color: #FFFFFF;
-    }
     .main-part{
         width: 100%;
-        border: 1px solid #000;
-        height: 85%;
-        position: relative;
+        height: 80%;
+        /*position: relative;*/
         /*background: url("../assets/login_background2.jpg") no-repeat;*/
         /*background-size: 100% 100%;*/
         background-color: #F2F6FC;
@@ -136,7 +112,7 @@
     }
     .description{
         /*border: 2px solid #e8e8e8;*/
-        margin: 170px 15%;
+        margin: 170px 15% 0;
     }
     .description div:first-child{
         font-size: 40px;
@@ -162,10 +138,19 @@
         margin-left: 25px;
         font-size: 20px;
     }
-    footer{
+    .footer{
         width: 100%;
         background-color: #252a2f;
-        height: 15%;
+        height: 20%;
         position: relative;
+        color: #C0C4CC;
+    }
+    .footer .help-links{
+        margin: 20px 10%;
+        width: 80%;
+    }
+    .footer .el-link{
+        color: #C0C4CC;
+        margin-right: 20px;
     }
 </style>
