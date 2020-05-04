@@ -1,14 +1,14 @@
 <template>
     <div>
         <el-row class="nav-part">
-            <el-col :span="10">
+            <el-col :span="13">
                 <i class="el-icon-platform-eleme"></i> Element
             </el-col>
-            <el-col :span="11" :offset="1">
+            <el-col :span="10">
                 <el-link :underline="false" v-show="getLoginStatus()">
                     <el-dropdown >
                         <span class="el-dropdown-link">
-                            管理员<i class="el-icon-arrow-down el-icon--right"></i>
+                            {{this.$store.state.adminUsername}}<i class="el-icon-arrow-down el-icon--right"></i>
                         </span>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item>
