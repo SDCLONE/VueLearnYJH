@@ -21,10 +21,7 @@
                         <el-menu-item-group title="分组2">
                             <el-menu-item index="/navi-view3/item1?name=yanzhibo">选项3</el-menu-item>
                         </el-menu-item-group>
-                        <el-submenu index="1-4">
-                            <template slot="title">选项4</template>
-                            <el-menu-item index="/navi-view3/item1?name=xiaoyutou">选项1</el-menu-item>
-                        </el-submenu>
+
                     </el-submenu>
                     <el-menu-item index="/navi-view3/item2">
                         <i class="el-icon-menu"></i>

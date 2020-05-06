@@ -62,7 +62,7 @@
     import RegisterLayer from "./RegisterLayer";
     import axios from "axios";
     import qs from "querystring";   //当发送post请求需要用到
-
+    axios.defaults.withCredentials=true;
     export default {
         name: "LoginPage",
         components: {NaviPart,RegisterLayer},
@@ -110,8 +110,8 @@
                             else{
                                 this.hintStatus=false;
                                 console.log("确认登录");
-                                this.$store.commit('LOGIN');
-                                this.$store.state.adminUsername=this.loginForm.username;
+                                this.$store.commit('LOGIN',this.loginForm.username);
+                                // this.$store.state.adminUsername=this.loginForm.username;
                                 console.log(this.$store.state.adminUsername);
                                 this.$message({
                                     showClose:true,
@@ -119,6 +119,7 @@
                                     type:'success',
                                     duration:1500
                                 })
+                                return true;
                             }
 
                         });

@@ -1,18 +1,24 @@
 <template>
     <div id="app">
+        <el-container>
+            <el-header>
+                <NaviPart/>
+            </el-header>
+            <el-main>
+                <ManagementNav/>
+            </el-main>
+        </el-container>
 
-        <el-row>
-            <NaviPart/>
-        </el-row>
 
     </div>
 </template>
 
 <script>
     import NaviPart from "./NaviPart";
+    import ManagementNav from "./ManagementNav";
     export default {
         name: "ManagementPage",
-        components: {NaviPart},
+        components: {ManagementNav, NaviPart},
         data(){
             return{
 
@@ -26,5 +32,7 @@
 </script>
 
 <style scoped>
-
+.el-header,.el-main{
+    padding:0;
+}
 </style>

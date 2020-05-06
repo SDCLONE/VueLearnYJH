@@ -61,7 +61,7 @@
 <script>
     import axios from 'axios';
     import qs from 'querystring';
-
+    axios.defaults.withCredentials=true;
     export default {
         name: "RegisterLayer",
         data(){
@@ -146,6 +146,9 @@
                 else if (!phoneReg.test(value)){
                     callback(new Error('请输入正确的电话号码'));
                 }
+                else {
+                    callback();
+                }
 
             };
             return{
@@ -214,7 +217,30 @@
             submitRegisterInfo(formName){
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        alert('submit!');
+                        // alert('submit!');
+                        let data={
+                            username:this.registerForm.username,
+                            password:this.registerForm.password,
+                            email:this.registerForm.email,
+                            phone:this.registerForm.phone,
+                            verifyCode:this.registerForm.verifyCode
+                        };
+                        axios({
+                            method:'post',
+                            url:'http://localhost:7770/admin/createAdmin',
+                            data:qs.stringify(data)
+                        }).then(res=>{
+                            //验证码错误
+                            if (res.data.status===this.$store.state.VERIFY_INCORRECT){
+                                this.$message.error(res.data.desc);
+                            }
+                            //验证码正确
+                            else {
+                                this.$message.success("注册成功");
+                                this.$store.state.registerCloseFlag=0;
+                                this.$store.state.registerFormVisible=false;
+                            }
+                        });
                         return false;
                     } else {
                         console.log('error submit!!');
@@ -232,10 +258,34 @@
                     //邮箱验证通过
                     if (err===''){
                         console.log("邮箱验证通过，可以发送邮件啦");
+                        axios({
+                            method:'get',
+                            url:'http://localhost:7770/admin/emailVerifyCode/'+this.registerForm.email,
+                        }).then(res=>{
+                            //判断是否为频繁请求
+                            if (res.data.status===this.$store.state.FREQUENT_CODE_REQUEST){
+                                this.$notify.error({
+                                    title:'错误',
+                                    message:res.data.desc
+                                })
+                            }
+                            //如果不是频繁请求
+                            else{
+                                this.$notify.success({
+                                    title:'成功',
+                                    message:'验证码发送成功'
+                                })
+                            }
+
+                        });
                     }
                     //邮箱验证失败
                     else{
                         console.log("邮箱验证失败："+err);
+                        this.$notify.error({
+                            title:'错误',
+                            message:err
+                        })
                     }
 
                 });

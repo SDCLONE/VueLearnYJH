@@ -1,10 +1,10 @@
 <template>
     <div>
         <el-row class="nav-part">
-            <el-col :span="13">
+            <el-col :span="10">
                 <i class="el-icon-platform-eleme"></i> Element
             </el-col>
-            <el-col :span="10">
+            <el-col :span="13">
                 <el-link :underline="false" v-show="getLoginStatus()">
                     <el-dropdown >
                         <span class="el-dropdown-link">
@@ -29,6 +29,10 @@
 </template>
 
 <script>
+    import axios from "axios";
+    import qs from "querystring";   //当发送post请求需要用到
+    axios.defaults.withCredentials=true;
+
     export default {
         name: "NaviPart",
         data(){
@@ -44,6 +48,18 @@
             handleLogout(){
                 console.log("退出登录");
                 this.$store.commit('LOGOUT');
+
+                //TODO 退出登录的逻辑
+                axios({
+                    method:'get',
+                    url:'http://localhost:7770/admin/logout'
+                }).then(()=>{
+                    this.$message({
+                        showClose:true,
+                        message:'退出登录',
+                        duration:1500
+                    })
+                })
             }
         }
     }
